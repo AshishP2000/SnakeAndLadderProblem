@@ -11,7 +11,7 @@ namespace SnakeAndLadderProblem
     {
         static void Main(string[] args)
         {
-            //UC-5 Ensure that player gets to exact winning position 100
+            //UC-6 Number of times the dice was played to win the game and also the position after every die role
             int Start_Position = 0,r=0,choice=0,count=0;
             const int NOPLAY = 0;
             const int LADDER = 1;
@@ -35,7 +35,7 @@ namespace SnakeAndLadderProblem
                             Start_Position = Start_Position - r;
                         else if(Start_Position==100)
                             Console.WriteLine("Position Reached: {0}", Start_Position);
-                        //Console.WriteLine("Position: {0}", Start_Position);
+                        Console.WriteLine("Position: {0}", Start_Position);
                         break;
                     case SNAKE:
                         Start_Position = Start_Position - r;
@@ -50,6 +50,7 @@ namespace SnakeAndLadderProblem
                 count++;
 
             }
+            Console.WriteLine("Number of times the dice was played: {0}",count);
             Console.ReadLine();
         }
     }
