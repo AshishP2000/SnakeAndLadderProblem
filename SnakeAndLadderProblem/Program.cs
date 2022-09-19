@@ -11,7 +11,7 @@ namespace SnakeAndLadderProblem
     {
         static void Main(string[] args)
         {
-            //UC-4 Repeat till the player reaches the winning position 100
+            //UC-5 Ensure that player gets to exact winning position 100
             int Start_Position = 0,r=0,choice=0,count=0;
             const int NOPLAY = 0;
             const int LADDER = 1;
@@ -26,12 +26,16 @@ namespace SnakeAndLadderProblem
                 Console.WriteLine("Player Choice: {0}", choice);
                 switch (choice)
                 {
-                    case NOPLAY:
+                    case NOPLAY:    
                         Console.WriteLine("Position: {0}", Start_Position);
                         break;
                     case LADDER:
                         Start_Position = Start_Position + r;
-                        Console.WriteLine("Position: {0}", Start_Position);
+                        if(Start_Position>100)
+                            Start_Position = Start_Position - r;
+                        else if(Start_Position==100)
+                            Console.WriteLine("Position Reached: {0}", Start_Position);
+                        //Console.WriteLine("Position: {0}", Start_Position);
                         break;
                     case SNAKE:
                         Start_Position = Start_Position - r;
